@@ -9,6 +9,8 @@ use Purifier;
 use Hash;
 use App\User;
 
+use File;
+
 
 class UsersController extends Controller
 {
@@ -47,5 +49,10 @@ class UsersController extends Controller
       return Response::json(['success'=> "Welcome to the team."]);
 
 
+    }
+
+    public function index()
+    {
+      return File::get('index.html');
     }
 }

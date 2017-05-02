@@ -19,3 +19,9 @@ Route::post('updateArticle/{id}', 'ArticlesController@update');
 Route::get('showArticle/{id}', 'ArticlesController@show');
 Route::post('deleteArticle/{id}', 'ArticlesController@destroy');
 Route::post('signUp','UsersController@signUp');
+
+
+
+
+
+Route::any('{path?}', 'UsersController@index')->where("path", ".+"); // always make last Route in list
